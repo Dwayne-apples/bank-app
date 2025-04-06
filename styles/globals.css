@@ -40,3 +40,57 @@ a {
     color-scheme: dark;
   }
 }
+
+.main-center {
+  text-align: center;
+}
+
+body {
+  background-color: lightsteelblue; /* Makes the entire background */
+  color: black; /* Ensures text remains readable */
+  margin: 0;
+  font-family: Arial, sans-serif;
+}
+
+/*might change later when changing between IBAN and SWIFT*/
+.top-bar {
+  background-color: #007bff; /* Blue color */
+  padding: 15px;
+  position: fixed;
+  width: 100%;
+  top: 0;
+  left: 0;
+  text-align: center;
+}
+
+.iban-container {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  max-width: 300px;
+  margin: auto;
+  /*puts container in the cneter*/
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh; /* Adjust as needed */
+
+}
+
+input {
+  padding: 8px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+button {
+  background-color: #008CBA;
+  color: white;
+  padding: 8px;
+  border: none;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: #005f73;
+}

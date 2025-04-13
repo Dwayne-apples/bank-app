@@ -24,7 +24,7 @@ function BankApp() {
       const response = await fetch(`${apiUrl}?${queryParam}`, {
         method: "GET",
         headers: {
-          "apikey": "3gTxDDhKhuVOP4DdBTDociF6768ggPJg", // Replace with a valid API key
+          "apikey": "your_API_KEY", // Replace with a valid API key
           "Accept": "application/json", // Set response format to JSON
         },
       });

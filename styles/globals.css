@@ -52,7 +52,6 @@ body {
   font-family: Arial, sans-serif;
 }
 
-/*might change later when changing between IBAN and SWIFT*/
 .top-bar {
   background-color: #007bff; /* Blue color */
   padding: 15px;
@@ -74,6 +73,7 @@ body {
   justify-content: center;
   align-items: center;
   height: 100vh; /* Adjust as needed */
+  
 
 }
 

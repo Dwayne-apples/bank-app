@@ -1,12 +1,14 @@
 import BankApp from "./BankNumberValidation";
+import CurrencyConversion from "./CurrencyConverter";
 
 export default function Home() {
   return (
     <div className="main-center">
       <header className="top-bar">
-        <h1>IBAN & SWIFT Number Validation</h1>
+        <h1>bank app</h1>
       </header>
-        <BankApp/>
+      <CurrencyConversion/>
+      <BankApp/>
     </div>
   );
 }

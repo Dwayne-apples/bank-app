@@ -1,5 +1,6 @@
 import React, { useState } from "react"; // Import React and the useState hook
 
+
 // Define API endpoints for IBAN and SWIFT validation
 const IBAN_API = "https://api.apilayer.com/bank_data/iban_validate";
 const SWIFT_API = "https://api.apilayer.com/bank_data/swift_check";
@@ -57,6 +58,7 @@ function BankApp() {
 
   return (
     <div className="iban-container">
+
       <h2>Please enter bank number to verify</h2>
       <input
         type="text"

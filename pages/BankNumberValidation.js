@@ -1,11 +1,12 @@
-import React, { useState } from "react"; // Import React and the useState hook
+import React from "react";
+import { useState } from "react";
 
 
 // Define API endpoints for IBAN and SWIFT validation
 const IBAN_API = "https://api.apilayer.com/bank_data/iban_validate";
 const SWIFT_API = "https://api.apilayer.com/bank_data/swift_check";
 
-function BankApp() {
+function BankNumberValidation() {
   // State variables to store user input, format type, validation result, and error messages
   const [bankNumber, setBankNumber] = useState("");
   const [format, setFormat] = useState("IBAN"); // Default format set to IBAN
@@ -25,7 +26,7 @@ function BankApp() {
       const response = await fetch(`${apiUrl}?${queryParam}`, {
         method: "GET",
         headers: {
-          "apikey": "your_API_KEY", // Replace with a valid API key
+          "apikey": "3gTxDDhKhuVOP4DdBTDociF6768ggPJg", // Replace with a working API key
           "Accept": "application/json", // Set response format to JSON
         },
       });
@@ -35,7 +36,7 @@ function BankApp() {
 
       const data = JSON.parse(errorText); // Convert response text into JSON format
 
-      // Check API response if valid and update state accordingly
+      // Check API response if valid and update state
       if (data.valid) {
         setValidationResult("Valid bank number");
         setError("");
@@ -44,7 +45,7 @@ function BankApp() {
         setError(`Possible issue: ${data.errors ? data.errors[0].message : "Check formatting."}`);
       }
     } catch (err) {
-      console.error("Error:", err); // Log errors
+      console.error("Error:", err);
       setError(`Failed to validate ${format}. API may be unreachable.`); // Display error message
     }
   };
@@ -53,13 +54,13 @@ function BankApp() {
   const toggleFormat = () => {
     setFormat(format === "IBAN" ? "SWIFT" : "IBAN"); // Switch format
     setValidationResult(null); // Reset validation result
-    setError(""); // Clear error messages
+    setError(""); // Reset error message
   };
 
   return (
-    <div className="iban-container">
+    <div className="iban-container" style={{height: 'auto',  paddingBottom: '400px', paddingTop: '50px'}}>
 
-      <h2>Please enter bank number to verify</h2>
+      <h2 style={{color: 'black'}}>Bank Number Validation</h2>
       <input
         type="text"
         placeholder={`Enter ${format} number`}
@@ -70,10 +71,10 @@ function BankApp() {
       <button onClick={toggleFormat}>Switch to {format === "IBAN" ? "SWIFT" : "IBAN"}</button> {/* Toggle format */}
 
       {/* Display validation result or error messages */}
-      {validationResult && <p>{validationResult}</p>}
+      {validationResult && <p style={{color: 'black'}}>{validationResult}</p>}
       {error && <p style={{ color: "red" }}>{error}</p>}
     </div>
   );
 }
 
-export default BankApp; // Export the component for use in other files
+export default BankNumberValidation; 

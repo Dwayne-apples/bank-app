@@ -41,56 +41,89 @@ a {
   }
 }
 
+/* General styles */
+body {
+  background-color: lightsteelblue; 
+  color: black;
+  margin: 0;
+  font-family: Arial, sans-serif;
+  scroll-behavior: smooth; /* Enables smooth scrolling */
+}
+
+/* Main content layout */
+.homepage, .iban-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100vh; 
+  color: white;
+}
+
+
 .main-center {
   text-align: center;
 }
 
-body {
-  background-color: lightsteelblue; /* Makes the entire background */
-  color: black; /* Ensures text remains readable */
-  margin: 0;
-  font-family: Arial, sans-serif;
-}
-
+/* Navigation bar */
 .top-bar {
   background-color: #007bff; /* Blue color */
-  padding: 15px;
   position: fixed;
   width: 100%;
-  top: 0;
-  left: 0;
-  text-align: center;
 }
 
-.iban-container {
+.nav-list {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
   display: flex;
-  flex-direction: column;
+  justify-content: center;
+  width: 100%;
+  background-color: darkblue;
+}
+
+.nav-item {
+  padding: 1px 20px;
+}
+
+.nav-item a {
+  color: white;
+  text-align: center;
+  padding: 14px 20px;
+  text-decoration: none;
+  display: block;
+}
+
+.nav-item a:hover {
+  background-color: #ddd;
+  color: grey;
+}
+
+
+/* IBAN container */
+.iban-container {
   gap: 10px;
   max-width: 300px;
   margin: auto;
-  /*puts container in the cneter*/
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 100vh; /* Adjust as needed */
-  
-
 }
 
+/* Inputs and buttons */
 input {
   padding: 8px;
   border: 1px solid #ccc;
   border-radius: 4px;
 }
 
-button {
-  background-color: #008CBA;
-  color: white;
-  padding: 8px;
-  border: none;
-  cursor: pointer;
+
+/* Background styling */
+.background {
+  background-color: black;
+  font-size: 16px;
 }
 
-button:hover {
-  background-color: #005f73;
+#about {
+  align-items: center;
+  justify-content: left; 
+  scroll-margin-top: 300px; /* Ensures section isn't hidden under the navbar */
+  color: white;
 }

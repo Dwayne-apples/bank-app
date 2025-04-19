@@ -25,7 +25,7 @@ const CurrencyConversion = () => {
   };
 
   return (
-    <div className="iban-container">
+    <div className="iban-container" style={{color:'black'}}>
       <h2>Currency Converter</h2>
       <div>
         <label>Amount: </label>
